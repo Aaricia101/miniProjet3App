@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">mini-projet3</string>
+    <string name="hello_blank_fragment">Bonjour fragment vide!</string>
+    <string name="conn_title">Identifiez-vous!</string>
+    <string name="text_tvID">Identifiant :</string>
+    <string name="text_tvPwd">Mot de passe :</string>
+    <string name="hintTvId">Tapez votre identifiant ici</string>
+    <string name="hintTvPwd">Tapez votre mot de passe ici</string>
+    <string name="strAll">Liste</string>
+    <string name="strAdd">Ajout</string>
+</resources>
