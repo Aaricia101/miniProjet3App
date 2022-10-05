@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allSucFragment">
+
+    <fragment
+        android:id="@+id/allSucFragment"
+        android:name="ca.qc.cgodin.mini_projet3.AllSucFragment"
+        android:label="fragment_all_suc"
+        tools:layout="@layout/fragment_all_suc" >
+        <action
+            android:id="@+id/action_allSucFragment_to_addSuc"
+            app:destination="@id/addSuc" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSuc"
+        android:name="ca.qc.cgodin.mini_projet3.AddSuc"
+        android:label="fragment_add_suc"
+        tools:layout="@layout/fragment_add_suc" />
+</navigation>

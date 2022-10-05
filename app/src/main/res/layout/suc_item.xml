@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin = "30dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="51dp" />
+
+    <TextView
+        android:id="@+id/tvVille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/tvBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="54dp" />
+
+    <TextView
+        android:id="@+id/tvMatricule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="133dp" />
+</LinearLayout>
