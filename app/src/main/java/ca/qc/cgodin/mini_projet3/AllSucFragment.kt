@@ -32,11 +32,11 @@ class AllSucFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         sucAdapter = sucAdapter()
         binding.rvListSuc.adapter = sucAdapter
+        viewModel.getSuc("999999999999")
         viewModel.listSucs.observe(viewLifecycleOwner, Observer {
-                resp -> sucAdapter.setSuc(resp.succursales)
+                resp -> sucAdapter.setSuc(resp)
 
         })
 

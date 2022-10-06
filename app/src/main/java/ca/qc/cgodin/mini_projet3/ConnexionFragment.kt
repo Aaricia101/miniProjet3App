@@ -1,14 +1,22 @@
 package ca.qc.cgodin.mini_projet3
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
+import ca.qc.cgodin.mini_projet3.ViewModel.SucViewModel
 import ca.qc.cgodin.mini_projet3.databinding.FragmentConnexionBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +33,8 @@ class ConnexionFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentConnexionBinding
+    private val viewModel: SucViewModel by navGraphViewModels(R.id.nav_graph)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,18 +50,38 @@ class ConnexionFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        binding.btnConnexion.setOnClickListener{
-            if (binding.etID.text.toString().equals("1111111") && binding.etPwd.text.toString().equals("Password1")){
+            binding.btnConnexion.setOnClickListener {
+                lifecycleScope.launch {
+                    withContext(Dispatchers.Main) {
+                        Log.i("test", viewModel.connectStudent(
+                            binding.etID.text.toString(),
+                            binding.etPwd.text.toString()
+                        ).toString())
+                if (viewModel.connectStudent(
+                        binding.etID.text.toString(),
+                        binding.etPwd.text.toString()
+                    ).toString() == "ok"
+                )
+                {
 
-                findNavController().navigate(
-                    R.id.action_connexionFragment_to_allSucFragment)
+                        Log.i("miniprojet3", "You have clicked on me!!")
+                        val bundle = Bundle().apply {
+                            putSerializable("aut", binding.etID.text.toString())
+                        }
+                        findNavController().navigate(
+                            R.id.action_connexionFragment_to_allSucFragment, bundle
+                        )
 
+                    } else {
+                        val toast = Toast.makeText(
+                            context,
+                            resources.getString(R.string.toast_conn_refus),
+                            Toast.LENGTH_SHORT
+                        )
+                        toast.show()
+                    }
             }
-            else {
-                val toast = Toast.makeText(context, resources.getString(R.string.toast_conn_refus), Toast.LENGTH_SHORT)
-                toast.show()
             }
-
         }
     }
 

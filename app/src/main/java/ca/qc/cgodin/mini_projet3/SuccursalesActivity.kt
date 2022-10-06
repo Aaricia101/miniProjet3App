@@ -48,7 +48,7 @@ class SuccursalesActivity : AppCompatActivity() {
         sucAdapter = sucAdapter()
         binding.rvListSuc.adapter = sucAdapter
         sucViewModel.listSucs.observe(this, Observer {
-                resp -> sucAdapter.setSuc(resp.succursales)
+                resp -> sucAdapter.setSuc(resp)
         })
 
     }
