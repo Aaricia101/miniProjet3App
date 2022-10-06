@@ -9,4 +9,6 @@
     <string name="hintTvPwd">Tapez votre mot de passe ici</string>
     <string name="strAll">Liste</string>
     <string name="strAdd">Ajout</string>
+    <string name="txt_conn">Connexion</string>
+    <string name="toast_conn_refus">Authentification refusée</string>
 </resources>
