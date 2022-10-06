@@ -3,12 +3,9 @@ package ca.qc.cgodin.mini_projet3.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ca.qc.cgodin.mini_projet3.R
-import ca.qc.cgodin.mini_projet3.models.Succursale
-import com.bumptech.glide.Glide
 
 class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
 

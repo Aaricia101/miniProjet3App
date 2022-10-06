@@ -3,8 +3,6 @@ package ca.qc.cgodin.mini_projet3.ViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ca.qc.cgodin.mini_projet3.models.Succursale
-import ca.qc.cgodin.mini_projet3.models.SucsResponse
 import ca.qc.cgodin.mini_projet3.repository.SucRepository
 import kotlinx.coroutines.launch
 
