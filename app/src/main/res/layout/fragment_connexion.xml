@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewModel.ConnexionFragment">
+    tools:context=".ConnexionFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -42,10 +42,10 @@
 
         <EditText
             android:id="@+id/etID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:ems="10"
+            android:autofillHints=""
             android:hint="@string/hintTvId"
             android:inputType="textPersonName" />
     </LinearLayout>
@@ -55,8 +55,9 @@
         android:layout_width="373dp"
         android:layout_height="58dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnConnexion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -70,12 +71,25 @@
 
         <EditText
             android:id="@+id/etPwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:ems="10"
+            android:autofillHints=""
+            android:inputType="textPassword"
             android:hint="@string/hintTvPwd"
-            android:inputType="textPersonName" />
+            />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_conn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
