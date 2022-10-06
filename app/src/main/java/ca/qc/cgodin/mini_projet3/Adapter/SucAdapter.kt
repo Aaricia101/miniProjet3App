@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ca.qc.cgodin.mini_projet3.R
+import ca.qc.cgodin.mini_projet3.models.Succursales
 
 class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
 
-    private var Suc: List<Succursale> = emptyList()
+    private var Suc: List<Succursales> = emptyList()
 
     inner class SucViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val idNo: TextView = itemView.findViewById(R.id.tvNo)
@@ -30,10 +31,10 @@ class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
 
         holderSuc.itemView.apply {
             //Glide.with(this).load(suc.urlToImage).into(holderSuc.ivCoverImage)
-            holderSuc.idNo.text = suc.no.toString()
+            holderSuc.idNo.text = suc.accesMdP
             holderSuc.tvVille.text = suc.ville
             holderSuc.tvBudget.text = suc.budget.toString()
-            holderSuc.tvMatricule.text = suc.matricule.toString()
+            holderSuc.tvMatricule.text = suc.accesMdP
         }
 
 
@@ -42,7 +43,7 @@ class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
 
     override fun getItemCount(): Int = Suc.size
 
-    fun setSuc(sucs: List<Succursale>) {
+    fun setSuc(sucs: List<Succursales>) {
         this.Suc = sucs
         notifyDataSetChanged()
     }

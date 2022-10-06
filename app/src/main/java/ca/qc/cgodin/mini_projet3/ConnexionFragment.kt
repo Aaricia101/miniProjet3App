@@ -1,13 +1,13 @@
 package ca.qc.cgodin.mini_projet3
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import ca.qc.cgodin.mini_projet3.R
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import ca.qc.cgodin.mini_projet3.databinding.FragmentConnexionBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,8 +24,8 @@ class ConnexionFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding: FragmentConnexionBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentConnexionBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,17 +37,15 @@ class ConnexionFragment : Fragment() {
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentConnexionBinding.inflate(inflater, container, false)
-        val view = binding.root
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
         binding.btnConnexion.setOnClickListener{
             if (binding.etID.text.toString().equals("1111111") && binding.etPwd.text.toString().equals("Password1")){
-                val intent = Intent(context, SuccursalesActivity::class.java)
-                startActivity(intent)
+
+                findNavController().navigate(
+                    R.id.action_connexionFragment_to_allSucFragment)
+
             }
             else {
                 val toast = Toast.makeText(context, resources.getString(R.string.toast_conn_refus), Toast.LENGTH_SHORT)
@@ -55,6 +53,16 @@ class ConnexionFragment : Fragment() {
             }
 
         }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentConnexionBinding.inflate(inflater, container, false)
+        val view = binding.root
+
 
         return view
     }

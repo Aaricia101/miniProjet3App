@@ -4,5 +4,5 @@ import ca.qc.cgodin.mini_projet3.network.RetrofitInstance
 
 class SucRepository() {
 
-    suspend fun getSuc() = RetrofitInstance.retrofitService.getSuc()
+    suspend fun getSuc(auth:String) = RetrofitInstance.retrofitService.getSuc(auth)
 }
