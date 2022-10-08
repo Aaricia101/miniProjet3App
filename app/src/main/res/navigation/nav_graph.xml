@@ -10,22 +10,50 @@
         android:name="ca.qc.cgodin.mini_projet3.AllSucFragment"
         android:label="fragment_all_suc"
         tools:layout="@layout/fragment_all_suc" >
+
         <action
-            android:id="@+id/action_allSucFragment_to_addSuc"
-            app:destination="@id/addSuc" />
+            android:id="@+id/action_allSucFragment_to_succursaleFragment"
+            app:destination="@id/succursaleFragment" />
+        <action
+            android:id="@+id/action_allSucFragment_to_deleteModFragment"
+            app:destination="@id/deleteModFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/addSuc"
-        android:name="ca.qc.cgodin.mini_projet3.AddSuc"
-        android:label="fragment_add_suc"
-        tools:layout="@layout/fragment_add_suc" />
     <fragment
         android:id="@+id/connexionFragment"
         android:name="ca.qc.cgodin.mini_projet3.ConnexionFragment"
         android:label="fragment_connexion"
         tools:layout="@layout/fragment_connexion" >
+
+
         <action
             android:id="@+id/action_connexionFragment_to_allSucFragment"
             app:destination="@id/allSucFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/succursaleFragment"
+        android:name="ca.qc.cgodin.mini_projet3.SuccursaleFragment"
+        android:label="fragment_succursale"
+        tools:layout="@layout/fragment_succursale" >
+        <argument
+            android:name="succursale"
+            app:argType="ca.qc.cgodin.mini_projet3.models.Succursales" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSucFragment"
+        android:name="ca.qc.cgodin.mini_projet3.AddSucFragment"
+        android:label="fragment_add_suc"
+        tools:layout="@layout/fragment_add_suc" >
+        <action
+            android:id="@+id/action_addSucFragment_to_succursaleFragment"
+            app:destination="@id/succursaleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteModFragment"
+        android:name="ca.qc.cgodin.mini_projet3.DeleteModFragment"
+        android:label="fragment_delete_mod"
+        tools:layout="@layout/fragment_delete_mod" >
+        <argument
+            android:name="Succursale"
+            app:argType="ca.qc.cgodin.mini_projet3.models.Succursales" />
     </fragment>
 </navigation>

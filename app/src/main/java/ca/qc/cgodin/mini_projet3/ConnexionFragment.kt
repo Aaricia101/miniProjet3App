@@ -53,15 +53,8 @@ class ConnexionFragment : Fragment() {
             binding.btnConnexion.setOnClickListener {
                 lifecycleScope.launch {
                     withContext(Dispatchers.Main) {
-                        Log.i("test", viewModel.connectStudent(
-                            binding.etID.text.toString(),
-                            binding.etPwd.text.toString()
-                        ).toString())
-                if (viewModel.connectStudent(
-                        binding.etID.text.toString(),
-                        binding.etPwd.text.toString()
-                    ).toString() == "ok"
-                )
+
+                if (viewModel.connectStudent(binding.etID.text.toString(), binding.etPwd.text.toString()))
                 {
 
                         Log.i("miniprojet3", "You have clicked on me!!")

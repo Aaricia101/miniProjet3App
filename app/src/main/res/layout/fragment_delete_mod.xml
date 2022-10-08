@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:defaultValue="@null"
     android:layout_height="match_parent">
 
     <EditText
@@ -39,11 +40,20 @@
 
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/buttonSup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/big_padding"
         android:background="@color/purple_500"
-        android:text="save"
+        android:text="Supprimer"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/buttonModifier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:background="@color/purple_500"
+        android:text="Modifier"
         android:textColor="@color/white" />
 </LinearLayout>

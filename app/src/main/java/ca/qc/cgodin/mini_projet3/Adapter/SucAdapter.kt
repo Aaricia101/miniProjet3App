@@ -11,6 +11,7 @@ import ca.qc.cgodin.mini_projet3.models.Succursales
 class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
 
     private var Suc: List<Succursales> = emptyList()
+    private lateinit var onItemClickListener: ((Succursales) -> Unit)
 
     inner class SucViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val idNo: TextView = itemView.findViewById(R.id.tvNo)
@@ -33,11 +34,19 @@ class sucAdapter: RecyclerView.Adapter<sucAdapter.SucViewHolder>() {
             //Glide.with(this).load(suc.urlToImage).into(holderSuc.ivCoverImage)
             holderSuc.idNo.text = suc.accesMdP
             holderSuc.tvVille.text = suc.ville
-            holderSuc.tvBudget.text = suc.budget.toString()
+            holderSuc.tvBudget.text = suc.budget
             holderSuc.tvMatricule.text = suc.accesMdP
         }
 
+        holderSuc.itemView.setOnClickListener {
+            onItemClickListener(suc)
+        }
 
+
+    }
+
+    fun setOnItemClickListener(listener: (Succursales) -> Unit){
+        onItemClickListener = listener
     }
 
 

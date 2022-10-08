@@ -2,8 +2,6 @@ package ca.qc.cgodin.mini_projet3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -26,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.bottomNavigationView.setupWithNavController(navController)
 
+
         val sucRep = SucRepository()
         val viewProvider = SucViewModelProviderFactory(sucRep)
 
@@ -39,5 +38,19 @@ class MainActivity : AppCompatActivity() {
         }
         //val fragmentTransaction = supportFragmentManager.beginTransaction()
         //fragmentTransaction.add(R.id.fragmentContainerView,ConnexionFragment.newInstance("","")).commit()
+        binding.bottomNavigationView.setOnClickListener{
+            when(it.id){
+                R.id.allSucFragment->{
+                    val fragment = AllSucFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment).commit()
+                }
+                R.id.addSucFragment->{
+                    val fragment = AddSucFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment).commit()
+
+                }
+
+            }
+        }
     }
 }

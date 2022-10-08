@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.navGraphViewModels
+import ca.qc.cgodin.mini_projet3.Adapter.sucAdapter
+import ca.qc.cgodin.mini_projet3.ViewModel.SucViewModel
+import ca.qc.cgodin.mini_projet3.databinding.FragmentAddSucBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,13 +17,16 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [AddSuc.newInstance] factory method to
+ * Use the [AddSucFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AddSuc : Fragment() {
+class AddSucFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding : FragmentAddSucBinding
+    private lateinit var sucAdapter: sucAdapter
+    private val viewModel: SucViewModel by navGraphViewModels(R.id.nav_graph)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +34,8 @@ class AddSuc : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(
@@ -34,7 +43,17 @@ class AddSuc : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_suc, container, false)
+        binding = FragmentAddSucBinding.inflate(layoutInflater)
+        binding.buttonSave.setOnClickListener{
+            val acces = binding.access.text
+            val budget = binding.budget.text
+            val ville = binding.ville.text
+
+            viewModel.addSuc(acces.toString(), budget.toString(), ville.toString())
+
+
+        }
+        return binding.root
     }
 
     companion object {
@@ -44,12 +63,12 @@ class AddSuc : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment AddSuc.
+         * @return A new instance of fragment AddSucFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            AddSuc().apply {
+            AddSucFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
