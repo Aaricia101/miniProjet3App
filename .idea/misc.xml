@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/activity_main.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/activity_succursales.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/fragment_all_ssucc.xml" value="0.3625" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/fragment_all_suc.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/fragment_delete_mod.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/fragment_succursale.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/layout/suc_item.xml" value="0.33" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/miniProjet3App/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.26481481481481484" />
         <entry key="..\:/app/miniprojet3/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/app/miniprojet3/app/src/main/res/layout/activity_suc.xml" value="0.1" />
         <entry key="..\:/app/miniprojet3/app/src/main/res/layout/fragment_all_suc.xml" value="0.1" />

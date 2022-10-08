@@ -48,6 +48,15 @@
             app:destination="@id/succursaleFragment" />
     </fragment>
     <fragment
+        android:id="@+id/allSsucFragment"
+        android:name="ca.qc.cgodin.mini_projet3.AllSsuccFragment"
+        android:label="fragment_all_ssucc"
+        tools:layout="@layout/fragment_all_ssucc" >
+        <action
+            android:id="@+id/action_allSsuccFragment_to_succursaleFragment"
+            app:destination="@id/succursaleFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/deleteModFragment"
         android:name="ca.qc.cgodin.mini_projet3.DeleteModFragment"
         android:label="fragment_delete_mod"
